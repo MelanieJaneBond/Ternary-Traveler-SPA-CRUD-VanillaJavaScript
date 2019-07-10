@@ -1,5 +1,5 @@
 {
-  "nations": [
+  "nation": [
     { 
       "id": 1, 
       "name": "Italy", 
@@ -15,13 +15,8 @@
       "name": "France", 
       "visa_required": false
     }
-    {
-      "id": 4,
-      "name": "USA",
-      "visa_required": true
-    }
   ],
-  "interests": [
+  "trip": [
     {
       "id": 1,
       "nationId": 1,

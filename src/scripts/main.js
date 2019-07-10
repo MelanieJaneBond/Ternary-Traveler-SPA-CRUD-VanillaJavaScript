@@ -1,4 +1,9 @@
-import { makeRadioButtons, newArticleForm } from "./createForms.js"
+import { newArticleForm, putArticleInDom } from "./createForms.js"
 
 let placeForPlaces = document.getElementById("container")
-placeForPlaces.innerHTML += (makeRadioButtons() + newArticleForm())
+function insertHTML () {
+placeForPlaces.innerHTML += (newArticleForm())
+}
+insertHTML()
+putArticleInDom()
+console.log(insertHTML)

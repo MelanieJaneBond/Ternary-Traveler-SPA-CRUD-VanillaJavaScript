@@ -1,20 +1,15 @@
-import { addNewPlace } from "./api.js"
+import { addNewPlace, grabNationsData } from "./api.js"
 
-//I think the producing function will need some numerical components, 
-//the split thing or...
-//some way of differentiating between each item in the array.
-
-function makeRadioButtons () {
-    nations.forEach(one => {
-        return `
-        <input id="${one.id}" type="radio" name="nation" value="${one.name}">
-        <label for="${one.id}">${one.name}</label>
-        `
-})
-}
+let articleContainer = document.getElementById("container2")
+let tripDetails = document.getElementById("tripDetails")
 
 function newArticleForm () {
     return `
+    <select id="nation">
+        <option value="1">Italy</option>
+        <option value="2">Switzerland</option>
+        <option value="3">France</option>
+    </select>
     <input type="text" id="name-of-place" placeholder="name of place">
     <input type="text" id="description" placeholder="describe it">
     <input type="number" id="price" placeholder="how much will the trip cost?">
@@ -22,21 +17,31 @@ function newArticleForm () {
     <input type="submit" id="submit-input" value="Submit">
     `
 }
-
+function putArticleInDom() {
 document.getElementById("submit-input").addEventListener("click", () => {
+    let nation = document.getElementById("nation").value
     let nameOfPlace = document.getElementById("name-of-place").value
     let descriptionOfPlace = document.getElementById("description").value
     let priceOfTrip = document.getElementById("price").value
-    let reviewOfTrip = document.getElementById("reivew").value
-    let createNewArticleObject = createNewArticle(radioSelect, nameOfPlace, descriptionOfPlace, priceOfTrip, reviewOfTrip)
+    let reviewOfTrip = document.getElementById("review").value
+    let nationDetail = document.createElement("li")
+    let placeDetail = document.createElement("li")
+    let dDetail = document.createElement("li")
+    let priceDetail = document.createElement("li")
+    let rDetail = document.createElement("li")
+    tripDetails.appendChild(nationDetail)
+    tripDetails.appendChild(placeDetail)
+    tripDetails.appendChild(dDetail)
+    tripDetails.appendChild(priceDetail)
+    tripDetails.appendChild(rDetail)
+    let createNewArticleObject = createNewArticle(nation, nameOfPlace, descriptionOfPlace, priceOfTrip, reviewOfTrip)
     addNewPlace(createNewArticleObject)
-    })
+})
 }
-//figure out how to get the radio button select into the createObject function
 
-function createNewArticle (radioSelect, place, description, price, review) {
+function createNewArticle (nation, place, description, price, review) {
     return {
-        nationId: parseInt(radioSelect),
+        nationId: nation,
         placeToGo: place,
         description: description,
         cost: parseInt(price),
@@ -44,4 +49,4 @@ function createNewArticle (radioSelect, place, description, price, review) {
     }
 }
 
-export {makeRadioButtons, newArticleForm, createNewArticle}
+export { newArticleForm, createNewArticle, putArticleInDom}
