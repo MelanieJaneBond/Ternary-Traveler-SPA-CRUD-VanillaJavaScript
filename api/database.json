@@ -1,24 +1,34 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+  "nations": [
+    { 
+      "id": 1, 
+      "name": "Italy", 
+      "visa_required": false 
     },
+    { 
+      "id": 2, 
+      "name": "Switzerland", 
+      "visa_required": true 
+    },
+    { 
+      "id": 3, 
+      "name": "France", 
+      "visa_required": false
+    }
     {
-      "id": 2,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 4,
+      "name": "USA",
+      "visa_required": true
     }
   ],
-  "comments": [
+  "interests": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+      "nationId": 1,
+      "placeToGo": "Local Market",
+      "description": "Local market where you can purchase local products and try the local food",
+      "cost": 3000.00,
+      "review": "You can definitely get things for a lower price if you are willing to bargain!"
+      }
+    ]
 }

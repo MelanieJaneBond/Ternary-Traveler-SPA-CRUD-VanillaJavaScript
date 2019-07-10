@@ -1,1 +1,4 @@
-console.log("Your Webpack application is set up and ready to go. Please start writing code.")
+import { makeRadioButtons, newArticleForm } from "./createForms.js"
+
+let placeForPlaces = document.getElementById("container")
+placeForPlaces.innerHTML += (makeRadioButtons() + newArticleForm())
