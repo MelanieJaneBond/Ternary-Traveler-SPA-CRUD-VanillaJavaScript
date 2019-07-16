@@ -1,14 +1,16 @@
 function addNewPlace(newPlaceForm) {
-    return fetch("http://localhost:8080/trip", {
+    return fetch("http://localhost:8088/trip", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newPlaceForm)
     })
 }
 
-function grabNationsData() {
-    return fetch("http://localhost:8080/nation")
+const nationsData = {
+    getDataFromJson : function(placeId) {
+    return fetch(`http://localhost:8088/nation?placeId=${placeId}`)
     .then(nationsData => nationsData.json())
 }
+}
 
-export {addNewPlace, grabNationsData}
+export {addNewPlace, nationsData}

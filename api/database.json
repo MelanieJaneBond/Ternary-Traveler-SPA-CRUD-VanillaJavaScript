@@ -1,18 +1,18 @@
 {
   "nation": [
-    { 
-      "id": 1, 
-      "name": "Italy", 
-      "visa_required": false 
+    {
+      "id": 1,
+      "name": "Italy",
+      "visa_required": false
     },
-    { 
-      "id": 2, 
-      "name": "Switzerland", 
-      "visa_required": true 
+    {
+      "id": 2,
+      "name": "Switzerland",
+      "visa_required": true
     },
-    { 
-      "id": 3, 
-      "name": "France", 
+    {
+      "id": 3,
+      "name": "France",
       "visa_required": false
     }
   ],
@@ -22,8 +22,56 @@
       "nationId": 1,
       "placeToGo": "Local Market",
       "description": "Local market where you can purchase local products and try the local food",
-      "cost": 3000.00,
+      "cost": 3000,
       "review": "You can definitely get things for a lower price if you are willing to bargain!"
-      }
-    ]
+    },
+    {
+      "nationId": 1,
+      "placeToGo": "home",
+      "description": "nice and warm",
+      "cost": 45,
+      "review": "super cozy",
+      "id": 2
+    },
+    {
+      "nationId": 2,
+      "placeToGo": "outside",
+      "description": "so hot",
+      "cost": 40,
+      "review": "sweaty and good for me",
+      "id": 3
+    },
+    {
+      "nationId": 2,
+      "placeToGo": "well",
+      "description": "let's",
+      "cost": 5,
+      "review": "if this works",
+      "id": 4
+    },
+    {
+      "nationId": 1,
+      "placeToGo": "ok",
+      "description": "how",
+      "cost": 3,
+      "review": "is this?",
+      "id": 5
+    },
+    {
+      "nationId": null,
+      "placeToGo": "f",
+      "description": "f",
+      "cost": 2,
+      "review": "F",
+      "id": 6
+    },
+    {
+      "nationId": null,
+      "placeToGo": "f",
+      "description": "f",
+      "cost": 3,
+      "review": "d",
+      "id": 7
+    }
+  ]
 }

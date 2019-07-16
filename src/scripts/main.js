@@ -6,4 +6,3 @@ placeForPlaces.innerHTML += (newArticleForm())
 }
 insertHTML()
 putArticleInDom()
-console.log(insertHTML)
